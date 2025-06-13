@@ -50,7 +50,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "columns_desktop": 4,
+        "columns_desktop": 2,
         "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
@@ -61,7 +61,7 @@
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "quick_add": "none",
+        "quick_add": "standard",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 44,
@@ -70,19 +70,81 @@
     },
     "banner_test_bg6cyY": {
       "type": "banner-test",
-      "name": "Boost Your Health Section",
       "settings": {
+        "desktop_text_align": "left",
+        "desktop_align_items": "flex-start",
+        "boost_health_content_padding": 0,
+        "boost_health_bg_color": "#ebebeb",
         "heading": "Boost Your Health. Save While You Thrive",
+        "boost_health_heading_color": "#000000",
+        "heading_max_width": 450,
         "subheading": "Health is a journey, not a one-time event. Get consistent support with our Subscribe and Save option, delivering up to 15% off every order to keep you on track and feeling your best.",
+        "boost_health_text_color": "#000000",
         "button_text": "Get a Subscription",
         "button_link": "",
-        "image": "shopify://shop_images/Rectangle_7.jpg"
+        "image": "shopify://shop_images/Rectangle_7.jpg",
+        "image_position": "right"
+      }
+    },
+    "banner_test_w3nwrU": {
+      "type": "banner-test",
+      "settings": {
+        "desktop_text_align": "right",
+        "desktop_align_items": "flex-end",
+        "boost_health_content_padding": 0,
+        "boost_health_bg_color": "#000000",
+        "heading": "The Essentials for Thriving Health",
+        "boost_health_heading_color": "#ffffff",
+        "heading_max_width": 450,
+        "subheading": "From energy to recovery, we’ve got your back—and every other muscle, joint, and cell in between.",
+        "boost_health_text_color": "#ffffff",
+        "button_text": "Get a Subscription",
+        "button_link": "",
+        "image": "shopify://shop_images/Rectangle_10.jpg",
+        "image_position": "left"
+      }
+    },
+    "banner_test_zh3Ttc": {
+      "type": "banner-test",
+      "settings": {
+        "desktop_text_align": "left",
+        "desktop_align_items": "flex-start",
+        "boost_health_content_padding": 50,
+        "boost_health_bg_color": "#ffffff",
+        "heading": "Every Health Journey Needs a Trusted Partner",
+        "boost_health_heading_color": "#000000",
+        "heading_max_width": 450,
+        "subheading": "We believe wellness starts with knowledge. That’s why we’re here to empower you with transparent, science-backed information on every product we make. Your health deserves the best.",
+        "boost_health_text_color": "#50575e",
+        "button_text": "LEARN MORE ABOUT US",
+        "button_link": "",
+        "image": "shopify://shop_images/retired-senior-man-sitting-fitness-swiss-ball-living-room-doing-wellness-fitness-workout-streching-arm-muscles-using-aerobics-elastic-band.png",
+        "image_position": "left"
+      }
+    },
+    "krill_banner_Gjnn9f": {
+      "type": "krill-banner",
+      "settings": {
+        "image": "shopify://shop_images/b3844e1870833fc23649b987858b5e95e1ef11f2.png",
+        "image_alt": "Tarros de Krill Oil",
+        "heading": "Sustainably Sourced Krill Oil",
+        "text": "Our formula is three times more absorbable than standard fish oil, ensuring your body gets the nutrients it needs for optimal cardiovascular, joint, and brain health.",
+        "bg_color": "#000000",
+        "heading_color": "#ffffff",
+        "text_color": "#ffffff",
+        "button_text_krill": "LEARN MORE ABOUT US",
+        "button_link": "",
+        "button_bg": "#ff0099",
+        "button_text_color": "#ffffff"
       }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
-    "banner_test_bg6cyY"
+    "banner_test_bg6cyY",
+    "banner_test_w3nwrU",
+    "banner_test_zh3Ttc",
+    "krill_banner_Gjnn9f"
   ]
 }

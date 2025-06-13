@@ -1,7 +1,6 @@
 .boost-health {
   display: flex;
   flex-wrap: wrap;
-  background-color: #EBEBEB;
   padding-inline: 0;
   margin: 0 auto;
   height: 574px;
@@ -17,8 +16,7 @@
 }
 
 .boost-health__content h2 {
-  width: max-content;
-  max-width: 450px;
+  width: -webkit-fill-available;
   margin-top: 0;
   margin-bottom: 0px;
   font-family: "Barlow", sans-serif;
@@ -27,7 +25,6 @@
   line-height: 90%;
   letter-spacing: 0px;
   vertical-align: middle;
-  color: #000000;
 }
 
 .boost-health__content p {
@@ -36,7 +33,6 @@
   font-size: 20px;
   line-height: 160%;
   letter-spacing: 0px;
-  color: #000000;
 }
 
 .boost-health__button {
@@ -77,6 +73,18 @@
   border-radius: 0;
 }
 
+@media screen and (max-width: 1150px) {
+  .boost-health {
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .boost-health--reverse {
+    flex-direction: row-reverse;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .boost-health {
     flex-direction: column;
@@ -93,6 +101,8 @@
   }
 
   .boost-health__content {
+    text-align: center;
+    align-items: center;
     padding: 24px;
   }
 

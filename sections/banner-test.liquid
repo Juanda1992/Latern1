@@ -1,6 +1,28 @@
 {{ 'banner-test.css' | asset_url | stylesheet_tag }}
 
-<section class="boost-health page-width">
+<style>
+    #shopify-section-{{ section.id }}.boost-health {
+      background-color: {{ section.settings.boost_health_bg_color }};
+      padding: {{ section.settings.boost_health_content_padding }}px;
+    }
+    #shopify-section-{{ section.id }} .boost-health__content h2 {
+      max-width: {{ section.settings.heading_max_width }}px;
+      color: {{ section.settings.boost_health_heading_color }};
+    }
+    #shopify-section-{{ section.id }} .boost-health__content p {
+      color: {{ section.settings.boost_health_text_color }};
+    }
+    @media screen and (min-width: 769px) {
+      #shopify-section-{{ section.id }} .boost-health__content {
+      text-align: {{ section.settings.desktop_text_align }};
+      align-items: {{ section.settings.desktop_align_items }};
+    }
+  }
+</style>
+<section
+  id="shopify-section-{{ section.id }}"
+  class="boost-health page-width {% if section.settings.image_position == 'left' %}boost-health--reverse{% endif %}"
+>
   <div class="boost-health__content">
     <h2>{{ section.settings.heading }}</h2>
     <p>{{ section.settings.subheading }}</p>
@@ -8,6 +30,7 @@
       {{ section.settings.button_text }}
     </a>
   </div>
+
   <div class="boost-health__image">
     {% if section.settings.image %}
       <figure class="boost-health__image-wrapper">
@@ -26,8 +49,46 @@
 
 {% schema %}
 {
-  "name": "Boost Your Health",
+  "name": "Health Banner",
   "settings": [
+    {
+      "type": "select",
+      "id": "desktop_text_align",
+      "label": "Desktop Text Align",
+      "default": "left",
+      "options": [
+        { "label": "Left", "value": "left" },
+        { "label": "Center", "value": "center" },
+        { "label": "Right", "value": "right" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "desktop_align_items",
+      "label": "Desktop Align Items",
+      "default": "flex-start",
+      "options": [
+        { "label": "Flex Start", "value": "flex-start" },
+        { "label": "Center", "value": "center" },
+        { "label": "Flex End", "value": "flex-end" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "boost_health_content_padding",
+      "label": "Padding of Boost Health (px)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "boost_health_bg_color",
+      "label": "Section background color",
+      "default": "#EBEBEB"
+    },
     {
       "type": "text",
       "id": "heading",
@@ -35,10 +96,32 @@
       "default": "Boost Your Health. Save While You Thrive"
     },
     {
+      "type": "color",
+      "id": "boost_health_heading_color",
+      "label": "Title color (H2)",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "heading_max_width",
+      "label": "Heading Max Width (px)",
+      "default": 450,
+      "min": 200,
+      "max": 1000,
+      "step": 10,
+      "unit": "px"
+    },
+    {
       "type": "textarea",
       "id": "subheading",
       "label": "Subheading",
       "default": "Health is a journey, not a one-time event. Get consistent support with our Subscribe and Save option, delivering up to 15% off every order to keep you on track and feeling your best."
+    },
+    {
+      "type": "color",
+      "id": "boost_health_text_color",
+      "label": "Text color (P)",
+      "default": "#50575e"
     },
     {
       "type": "text",
@@ -54,12 +137,28 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Right Side Image"
+      "label": "Side Image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image Position on Desktop",
+      "default": "right",
+      "options": [
+        {
+          "label": "Right",
+          "value": "right"
+        },
+        {
+          "label": "Left",
+          "value": "left"
+        }
+      ]
     }
   ],
   "presets": [
     {
-      "name": "Boost Your Health Section"
+      "name": "Health Section"
     }
   ]
 }
